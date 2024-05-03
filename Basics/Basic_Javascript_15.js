@@ -49,7 +49,7 @@ console.log(multiply(7)); // Outputs 49
 // Named IIFE
 (function greeting() {
     console.log("Hello, named IIFE!");
-})();
+})();        // Must place ; to stop/end context
 
 // IIFE with parameters
 ((number) => {
