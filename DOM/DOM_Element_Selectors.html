@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOM Element Selectors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="favicon.png">
+
+  <style>
+    .bg-black {
+      background-color: black;
+      color: white;
+    }
+  </style> 
+
+</head>
+  
+<body class="bg-black">
+</body>
+
+<script>
+  // Create a new div element 
+  const div = document.createElement('div');
+  
+  // Assign class name, ID, and styles
+  div.className = 'main'; // Initial class
+  div.id = 'title'; // Assign an ID
+  
+  // Add another class without overriding
+  div.classList.add('head'); // This appends instead of overwriting
+
+  // Style properties
+  div.style.backgroundColor = "green";
+  div.style.padding = "15px";
+  div.style.height = "100px";
+  div.style.color = "white";
+  div.style.textAlign = "center"; // Corrected typo
+
+  // Add text content
+  div.innerText = 'My name is Abdullah'; // Sets text content
+
+  // Append the div to the body
+  document.body.appendChild(div); // Now it will be visible on the page
+
+/*  
+
+  // ******* DOM Selection and Attribute Manipulation *******
+  
+  // 1- Select an element by ID
+  const elementById = document.getElementById('exampleId');
+  console.log("Element by ID:", elementById);
+  
+  // 2- Select elements by class name
+  const elementsByClassName = document.getElementsByClassName('exampleClass');
+  console.log("Elements by Class Name:", elementsByClassName);
+  
+  // 3- Select elements by tag name
+  const elementsByTagName = document.getElementsByTagName('p');
+  console.log("Elements by Tag Name:", elementsByTagName);
+  
+  // 4- Select the first element that matches a CSS selector
+  const firstElementWithClass = document.querySelector('.exampleClass');
+  console.log("First Element with Class:", firstElementWithClass);
+  
+  // 5- Select all elements that match a CSS selector
+  const allParagraphs = document.querySelectorAll('p');
+  console.log("All Paragraphs:", allParagraphs);
+  
+  // 6- Setting attributes
+  const setAttrExample = document.createElement('div'); // Create a new div
+  setAttrExample.setAttribute('id', 'uniqueDiv'); // Set an ID attribute
+  setAttrExample.className = 'exampleClass'; // Assign a class
+  setAttrExample.textContent = 'Div with custom attributes'; // Add some text
+  document.body.appendChild(setAttrExample); // Append the div to the body
+  
+  // 7- Getting attributes
+  const getAttrExample = document.querySelector('#uniqueDiv'); // Select the newly created div
+  const divId = getAttrExample.getAttribute('id'); // Get the ID attribute
+  console.log("Div ID:", divId); // Outputs "uniqueDiv"
+
+*/
+  
+</script>
+
+</html>
+
+
+
