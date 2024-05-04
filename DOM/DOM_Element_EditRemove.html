@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOM Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.png">
+
+  <!-- Basic styling for the body -->
+  <style>
+    .bg-black {
+      background-color: black;
+      color: white;
+    }
+  </style>
+
+</head>
+<body class="bg-black">
+
+<!-- Unordered list with one item -->
+<ul class="language">
+  <li>javascript</li> <!-- Initial list item -->
+</ul>
+
+</body>
+
+<script>
+  // Function to add a new language to the list (brute-force method)
+  function addLang(lang) {
+    const li = document.createElement('li'); // Create a new `li` element
+    li.innerText = `${lang}`; // Set its text content
+    const u = document.querySelector('.language'); // Select the list
+    u.appendChild(li); // Append the new `li` to the list
+  }
+
+  // Adding new languages to the list
+  addLang('python'); // Adds "python" to the list
+  addLang('ruby'); // Adds "ruby" to the list
+
+  // Optimized way to add elements to the list
+  function optimizedAppend(lang) {
+    const li = document.createElement('li'); // Create a new `li`
+    const addText = document.createTextNode(lang); // Create a text node
+    li.appendChild(addText); // Append the text node to the `li`
+    const u = document.querySelector('.language'); // Select the list
+    u.appendChild(li); // Append the new `li` to the list
+  }
+
+  optimizedAppend('hello'); // Adds "hello" to the list
+
+  // Editing list items (3 methods)
+  const secondLang = document.querySelector('li:nth-child(2)'); // Select the second list item
+
+  // Method 1: Change `innerHTML`
+  // secondLang.innerHTML = 'java'; // Replaces the inner content
+
+  // Method 2: Change `outerHTML`
+  // secondLang.outerHTML = "<li> reactJS </li>"; // Replaces the entire `li` with a new one
+
+  // Method 3: Using `replaceWith`
+  // const newLi = document.createElement("li"); // Create a new `li`
+  // newLi.textContent = 'java'; // Set its content
+  // secondLang.replaceWith(newLi); // Replace the old `li` with the new one
+
+  // Deletion
+  const last = document.querySelector('li:last-child'); // Select the last `li`
+  last.remove(); // Removes the selected `li`
+
+</script>
+
+</html>
