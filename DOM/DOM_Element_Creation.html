@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOM Element Creation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.png">
+  
+  <!-- Styling for the body -->
+  <style>
+    .bg-black {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-black">
+
+  <!-- Parent div containing child elements -->
+  <div class="parent">
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+  </div>
+
+</body>
+
+<script>
+  // Selecting the parent div by its class name
+  const parent = document.querySelector('.parent');
+  console.log("Parent div:", parent);
+
+  // Accessing all children of the parent div
+  console.log("Children:", parent.children); // Outputs a HTMLCollection of child elements
+
+  // Accessing specific children by index
+  console.log("First child:", parent.children[0]); // Monday
+  console.log("Second child:", parent.children[1]); // Tuesday
+
+  // Looping through all children to access their inner content
+  for (let i = 0; i < parent.children.length; i++) {
+    console.log("Child content:", parent.children[i].innerHTML); // Outputs the text content of each child
+  }
+
+  // Accessing the first and last child elements
+  console.log("First child element:", parent.firstElementChild); // Monday
+  console.log("Last child element:", parent.lastElementChild); // Thursday
+
+  // Applying styles to a specific child
+  parent.children[1].style.color = "black"; // Changing text color
+  parent.children[1].style.backgroundColor = "orange"; // Changing background color
+  parent.children[1].style.textAlign = "center"; // Changing the text_Alignment
+
+  // Navigating from child to parent
+  const dayElement = document.querySelector('.day'); // Selecting the first element with class "day"
+  console.log("Selected day element:", dayElement); // Outputs the "Monday" div
+
+  // Accessing the parent of a child element
+  console.log("Parent of day element:", dayElement.parentElement); // Outputs the parent div
+
+  // Accessing the next sibling element
+  console.log("Next sibling:", dayElement.nextElementSibling); // Outputs the "Tuesday" div
+
+  // Accessing all child nodes (including text nodes and comments)
+  console.log("Child nodes:", parent.childNodes); // Outputs all nodes, including text and comments
+
+/*
+      // ****************** Useful DOM Element Selectors *******************
+      
+// 1- document.createElement()
+Purpose: Creates a new DOM element of the specified type.
+Usage: Used to create new elements to add to the DOM.
+Example: const newDiv = document.createElement('div'); // Creates a new `div` element
+
+// 2- element.appendChild()
+Purpose: Appends a child element to a specified parent element.
+Usage: Used to add newly created elements or move existing elements within the DOM.
+Example: parent.appendChild(newDiv); // Appends `newDiv` to the `parent` element
+
+// 3- element.children
+Purpose: Returns a live HTMLCollection of child elements.
+Usage: Used to access child elements of a parent, allowing iteration and manipulation.
+Example: console.log(parent.children); // Outputs the child elements of the `parent`
+
+// 4- element.firstElementChild
+Purpose: Returns the first child element of a parent.
+Usage: Useful for accessing the first element in a list of children.
+Example: console.log(parent.firstElementChild); // Outputs the first child element
+
+// 5- element.lastElementChild
+Purpose: Returns the last child element of a parent.
+Usage: Useful for accessing the last element in a list of children.
+Example: console.log(parent.lastElementChild); // Outputs the last child element
+
+// 6- element.parentElement
+Purpose: Returns the parent element of the current element.
+Usage: Useful for navigating up the DOM tree.
+Example: console.log(dayElement.parentElement); // Outputs the parent of `dayElement`
+
+// 7- element.nextElementSibling
+Purpose: Returns the next sibling element.
+Usage: Useful for navigating to the next element at the same level in the DOM tree.
+Example: console.log(dayElement.nextElementSibling); // Outputs the next sibling element
+
+// 8- element.childNodes
+Purpose: Returns all child nodes, including text nodes, comments, etc.
+Usage: Useful for accessing all nodes, including those not visible, like text nodes and comments.
+Example: console.log("Child nodes:", parent.childNodes); // Outputs all child nodes of `parent`
+  
+*/
+
+</script>
+
+</html>
