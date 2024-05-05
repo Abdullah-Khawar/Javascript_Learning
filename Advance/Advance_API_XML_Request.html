@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XML HTTP REQUEST</title>
+</head>
+<body style="background-color:#212121; color:#fff;">
+  
+    <script>
+        // GitHub API to fetch user information
+        const githubUrl = 'https://api.github.com/users/Abdullah-Khawar'; // URL for the GitHub user
+
+        // Create a new XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+
+        // Open a GET request to the specified URL
+        xhr.open('GET', githubUrl); // Initialize the request
+
+        // Variable to store the number of followers
+        let myFollowers = 0;
+
+        // Event handler for when the ready state changes
+        xhr.onreadystatechange = function() {
+            // Check if the request is complete
+            if (xhr.readyState === 4) { // `4` indicates the request is complete
+                const data = JSON.parse(this.responseText); // Parse the response text(String) into a JavaScript 'object'
+                myFollowers = data.followers; // Extract the `followers` field from the response
+            }
+
+            // Display the number of followers to the console
+            console.log("Number of followers:", myFollowers);
+        };
+
+        // Send the request
+        xhr.send(); 
+      
+    </script>
+
+</body>
+</html>
