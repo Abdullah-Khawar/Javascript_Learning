@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React and Bind Example</title>
+</head>
+<body>
+    <button>Button Clicked</button> <!-- Button to trigger the event -->
+</body>
+<script>
+    // Class representing a simple application
+    class React {
+        constructor() {
+            this.library = "React"; // Property to indicate the library name
+            this.server = "https://localhost:300"; // Property for server URL
+
+            // Adding an event listener to the button in the DOM
+            document
+                .querySelector('button') // Select the button element
+                .addEventListener('click', this.handleClick.bind(this)); // Bind the event handler with `this`
+        }
+
+        // Event handler for the button click event
+        handleClick() {
+            console.log("button clicked"); // Logs a message when the button is clicked
+            console.log(this.server); // Logs the server URL from the class property
+        }
+    }
+
+    // Create an instance of the `React` class
+    const app = new React(); // Instantiates the `React` class
+</script>
+</html>
