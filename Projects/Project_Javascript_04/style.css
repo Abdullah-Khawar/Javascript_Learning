@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(195, 244, 195);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.panel {
+  height: 80%;
+  width: 80%;
+  background-color: white;
+  border-radius: 0.4rem;
+}
+
+.ptop {
+  height: 15%;
+  width: 100%;
+  background-color: rgb(57, 152, 106);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20%;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+
+/* BOX */
+.box {
+  border-radius: 0.2rem;
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+}
+
+.elem h2 {
+  color: white;
+  font-size: 2vw;
+}
+.elem {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+
+/* Bottom */
+.pbtm {
+  overflow: hidden;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5vw;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 2px;
+  width: 100%;
+  height: calc(100% - 15%);
+  background-color: black;
+}
+
+/* Bubble */
+.bubble {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: rgb(40, 132, 30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+.bubble:hover {
+  cursor: pointer;
+  background-color: rgb(81, 192, 69);
+}
+
+.restart {
+  background-color: black;
+  border: 1px solid white;
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
